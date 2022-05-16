@@ -1,0 +1,18 @@
+[
+    {
+        "username":"bruce wayne",
+        "alterego":"batman",
+        "city":"gotham"
+    },
+    { 
+        "username":"peter parker",
+        "alterego":"spiderman",
+        "city":"newyork"
+
+    },
+    {
+        "username":"krishna",
+        "alterego":"krish",
+        "city":"mumbai"
+    }
+]
