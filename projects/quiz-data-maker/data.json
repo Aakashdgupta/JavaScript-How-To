@@ -1,0 +1,35 @@
+[
+    {
+        "question":"What is Java ?",
+        "opt1":"Programming language",
+        "opt2":"Type of Cofee",
+        "opt3":"a Game",
+        "opt4":"all of them",
+        "ans":"Programming language"
+    },
+    {
+        "question":"What is full form of OOP ?",
+        "opt1":"over of program",
+        "opt2":"on off program",
+        "opt3":"object oriented programming",
+        "opt4":"all of them",
+        "ans":"object oriented programming"
+    },
+    {
+        "question":"What is Javascript is used for?",
+        "opt1":"game dev",
+        "opt2":"ai dev",
+        "opt3":"for nothing",
+        "opt4":"web dev",
+        "ans":"web dev"
+    },
+    {
+        "question":"what ML stands for  ?",
+        "opt1":"Machine Learning",
+        "opt2":"meta learning",
+        "opt3":"my learning",
+        "opt4":"all of them",
+        "ans":"Machine Learning"
+    }
+
+]
