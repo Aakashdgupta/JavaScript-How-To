@@ -1,12 +1,12 @@
 let sorted = [];
 var datad = [];
 
-let div = document.getElementById("users");
+let div = document.getElementById("questions");
 let out = "";
 
 fetch("data.json")
   .then((resp) => resp.json())
-  
+
   .then((data) => {
     for (let i = 0; i < data.length; i++) {
       datad.push(data[i]);
