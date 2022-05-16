@@ -15,6 +15,8 @@
 
 
 
+    <div id="json-output"></div>
+
 
 
 <script>
@@ -33,7 +35,28 @@ function getText(){
     .catch((err)=> console.log(err))
 }
 
+//Fetching Json
+document.getElementById("get-json")
+.addEventListener("click", getJson)
 
+function getJson(){
+    fetch('sample.json')
+    .then((res)=>res.json())
+    .then((data)=>{
+        console.log(data)
+        let out = `<h2>  Ussers</h2>`
+        data.forEach((user) => {
+            out += `
+
+            <ul>
+                <li> ID: ${user.username} </li>
+            </ul>
+            `  
+        });
+
+        document.getElementById("json-output").innerHTML = out
+    })
+}
 
 
 
