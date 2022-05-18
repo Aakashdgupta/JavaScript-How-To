@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher order array methods</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+
+<script>
+
+let users = [
+    {
+        "name":"peter parker",
+        "alterego":"spiderman",
+        "age":16
+    },
+    {
+        "name":"iron man",
+        "alterego":"ironman",
+        "age":45
+    },
+    {
+        "name":"bruce wayne",
+        "alterego":"batman",
+        "age":50
+    },
+]
+
+let ages = [21,14,16,34,16,45]
+
+
+// For each 
+users.forEach((user,index,users)=>{
+    console.log(` ${user.name} - at position ${index} in ${users.length} `)
+})
+
+// filter
+
+let canvote =ages.filter((age)=> {
+    if(age>=18){
+        return true
+    }
+})
+
+//shorter version 
+let canvote2 = ages.filter(age=> age>=18)
+
+console.log(canvote)
+console.log(canvote2)
+
+
+// map 
+let alter = users.map(user=>` i am ${user.alterego} `)
+console.log(alter)
+
+
+//sort 
+
+let sorted = ages.sort((a,b)=>{
+if(a>b) return 1
+return -1
+})
+
+let sortedbyage = users.sort((a,b)=>{
+if(a.age>b.age) return 1
+return -1
+})
+
+console.log(sorted)
+console.log(sortedbyage)
+
+
+
+//reduce
+let agesum = ages.reduce((total,age)=>total+age,0)
+console.log(agesum)
+
+</script>
+
+
+</body>
+</html>
