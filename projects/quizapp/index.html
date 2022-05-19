@@ -84,6 +84,9 @@
       ];
 
 
+function onQuizOver(score){
+    alert(score)
+}
 
       let quiz = new Quiz(questions, {
         que: "que",
@@ -91,7 +94,8 @@
         opt2: "opt2",
         opt3: "opt3",
         opt4: "opt4",
-      });
+      }
+      ,onQuizOver);
       quiz.updateQuestions();
 
 

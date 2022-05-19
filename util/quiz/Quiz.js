@@ -1,9 +1,10 @@
 class Quiz {
-  constructor(questions, config = null) {
+  constructor(questions, config = null,onQuizOver) {
     this.questions = questions;
     this.score = 0;
     this.index = 0;
     this.config = config;
+    this.onQuizOver =onQuizOver
 
     this.qEl;
     this.opt1El;
@@ -67,10 +68,7 @@ class Quiz {
       this.score++;
     }
     this.forward()
- 
-    if(this.index >= this.questions.length) {
-      alert(this.score);
-    }
+    this.checkQuizOver()
 
   }
 
@@ -80,6 +78,15 @@ class Quiz {
       this.updateQuestions();
     }
   }
+
+  checkQuizOver() {
+    if (this.index >= this.questions.length) {
+      this.onQuizOver(this.score)
+
+    }
+  }
+
+
 }
 
 
