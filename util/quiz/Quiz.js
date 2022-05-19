@@ -66,13 +66,19 @@ class Quiz {
     if (opt === this.questions[this.index].ans) {
       this.score++;
     }
-    this.index++;
-    if (this.index < this.questions.length) {
-      this.updateQuestions();
-    } else {
+    this.forward()
+ 
+    if(this.index >= this.questions.length) {
       alert(this.score);
     }
 
+  }
+
+  forward() {
+    this.index++;
+    if (this.index < this.questions.length) {
+      this.updateQuestions();
+    }
   }
 }
 

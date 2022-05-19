@@ -101,7 +101,7 @@
       doSomething = () => {
         // alert("times up !");
         t.reset();
-        quiz.updateQuestions()
+        quiz.forward()
         t.update();
       };
       let t = new countDownTimer(0.5, doSomething);
