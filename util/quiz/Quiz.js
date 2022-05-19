@@ -1,10 +1,11 @@
 class Quiz {
-  constructor(questions, config = null,onQuizOver) {
+  constructor(questions, config = null,onQuizOver,onOptionClick) {
     this.questions = questions;
     this.score = 0;
     this.index = 0;
     this.config = config;
-    this.onQuizOver =onQuizOver
+    this.onQuizOver = onQuizOver
+    this.onOptionClick =onOptionClick
 
     this.qEl;
     this.opt1El;
@@ -25,6 +26,7 @@ class Quiz {
 
         ctx.opt1El.addEventListener("click", (e) => {
           ctx.checkans(ctx.questions[ctx.index][e.target.id]);
+          if(ctx.onOptionClick) ctx.onOptionClick()
         });
           
           
@@ -32,6 +34,7 @@ class Quiz {
         // console.log(ctx.opt2El);
         ctx.opt2El.addEventListener("click", (e) => {
           ctx.checkans(ctx.questions[ctx.index][e.target.id]);
+          if(ctx.onOptionClick) ctx.onOptionClick()
         });
           
           
@@ -40,6 +43,7 @@ class Quiz {
 
         ctx.opt3El.addEventListener("click", (e) => {
           ctx.checkans(ctx.questions[ctx.index][e.target.id]);
+          if(ctx.onOptionClick) ctx.onOptionClick()
         });
       }
 
@@ -47,6 +51,7 @@ class Quiz {
 
       ctx.opt4El.addEventListener("click", (e) => {
         ctx.checkans(ctx.questions[ctx.index][e.target.id]);
+        if(ctx.onOptionClick) ctx.onOptionClick()
       });
 
     } else {

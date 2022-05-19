@@ -88,6 +88,9 @@ function onQuizOver(score){
     alert(score)
     t.shutDown()
 }
+function onOptionClick(){
+    t.reset()
+}
 
       let quiz = new Quiz(questions, {
         que: "que",
@@ -96,7 +99,8 @@ function onQuizOver(score){
         opt3: "opt3",
         opt4: "opt4",
       }
-      ,onQuizOver);
+      ,onQuizOver
+      ,onOptionClick);
       quiz.updateQuestions();
 
 
