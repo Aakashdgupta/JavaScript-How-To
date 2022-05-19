@@ -21,6 +21,8 @@
     </style>
   </head>
   <body>
+      <h1 id="timer"> Timer</h1>
+
     <div class="container">
       <div class="que-c">
         <h2 id="que">Question</h2>
@@ -42,7 +44,10 @@
     </div>
 
     <script src="../../util/quiz/Quiz.js"></script>
+    <script src="../../util/cd-timer/timer.js"></script>
     <script>
+
+
       let questions = [
         {
           question: "What is Java ?",
@@ -78,7 +83,9 @@
         },
       ];
 
-      quiz = new Quiz(questions, {
+
+
+      let quiz = new Quiz(questions, {
         que: "que",
         opt1: "opt1",
         opt2: "opt2",
@@ -86,6 +93,20 @@
         opt4: "opt4",
       });
       quiz.updateQuestions();
+
+
+
+
+      
+      doSomething = () => {
+        // alert("times up !");
+        t.reset();
+        quiz.updateQuestions()
+        t.update();
+      };
+      let t = new countDownTimer(0.5, doSomething);
+      t.update();
+
     </script>
   </body>
 </html>

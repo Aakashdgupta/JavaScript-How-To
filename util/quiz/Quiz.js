@@ -12,15 +12,15 @@ class Quiz {
     this.opt4El;
 
     if (this.config !== null) {
-      console.log("  not empty");
+      // console.log("  not empty");
       let ctx = this;
 
       if (ctx.config) {
           ctx.qEl = document.getElementById(ctx.config.que);
-          console.log(ctx.config)
+          // console.log(ctx.config)
 
           ctx.opt1El = document.getElementById(ctx.config.opt1);
-          console.log(ctx.opt1El)
+          // console.log(ctx.opt1El)
 
         ctx.opt1El.addEventListener("click", (e) => {
           ctx.checkans(ctx.questions[ctx.index][e.target.id]);
@@ -28,7 +28,7 @@ class Quiz {
           
           
         ctx.opt2El = document.getElementById(this.config.opt2);
-        console.log(ctx.opt2El);
+        // console.log(ctx.opt2El);
         ctx.opt2El.addEventListener("click", (e) => {
           ctx.checkans(ctx.questions[ctx.index][e.target.id]);
         });
@@ -49,7 +49,7 @@ class Quiz {
       });
 
     } else {
-      console.log("empty");
+      // console.log("empty");
     }
   }
 

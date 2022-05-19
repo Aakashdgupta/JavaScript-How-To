@@ -6,9 +6,9 @@ class countDownTimer{
         this.timerInterval = null
         this.doSomething =doSomething
 
-        console.log(this.countDownTime)
-        console.log(this.totalTimeInSec)
-        console.log(this.timerInterval)
+        // console.log(this.countDownTime)
+        // console.log(this.totalTimeInSec)
+        // console.log(this.timerInterval)
     }
     updateTimer() {
    
@@ -16,10 +16,10 @@ class countDownTimer{
     let h = Math.floor(this.totalTimeInSec / 3600)
     let m = Math.floor((this.totalTimeInSec/60)%60)
     let s = this.totalTimeInSec - (h * 3600 + m * 60)
-    console.log(h)
-    console.log(m)
-    console.log(s)
-    console.log(this.totalTimeInSec)
+    // console.log(h)
+    // console.log(m)
+    // console.log(s)
+    // console.log(this.totalTimeInSec)
         
 
     let time = `${h} : ${m} : ${s}`
