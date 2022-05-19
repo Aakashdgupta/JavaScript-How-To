@@ -1,22 +1,61 @@
-let countDownTime = .50//in minute
 
-let totalTimeInSec = countDownTime * 60
+class countDownTimer{
+    constructor(time,doSomething) {
+        this.countDownTime = time
+        this.totalTimeInSec = time * 60
+        this.timerInterval = null
+        this.doSomething =doSomething
 
-let timerElement = document.getElementById("timer")
+        console.log(this.countDownTime)
+        console.log(this.totalTimeInSec)
+        console.log(this.timerInterval)
+    }
+    updateTimer() {
+   
 
-function updateTimer() {
-    let h = Math.floor(totalTimeInSec / 3600)
-    let m = Math.floor((totalTimeInSec/60)%60)
-    let s = totalTimeInSec -(h*3600 + m*60)
+    let h = Math.floor(this.totalTimeInSec / 3600)
+    let m = Math.floor((this.totalTimeInSec/60)%60)
+    let s = this.totalTimeInSec - (h * 3600 + m * 60)
+    console.log(h)
+    console.log(m)
+    console.log(s)
+    console.log(this.totalTimeInSec)
+        
 
     let time = `${h} : ${m} : ${s}`
-    timerElement.innerHTML = time
-    if (totalTimeInSec > 0) {
-        totalTimeInSec--
-    } else {
-        alert(" times up")
-        clearInterval(timerInterval)
+    document.getElementById("timer").innerHTML = time
+    if (this.totalTimeInSec > 0) {
+        this.totalTimeInSec--
+    } else { 
+        clearInterval(this.timerInterval)
+        if (this.doSomething) this.doSomething()
+        return
+ 
+    }
+        
+    }
+
+
+    update() {
+        this.timerInterval = setInterval(this.updateTimer.bind(this), 1000)
+
+    }
+
+    reset() {
+        this.totalTimeInSec =this.countDownTime *60
     }
 }
 
-let timerInterval =setInterval(updateTimer,1000)
+
+// Runner Code
+
+
+doSomething = () => {
+    alert("times up !")
+    t.reset()
+    t.update()
+   
+
+}
+let t = new countDownTimer(.50,doSomething)
+t.update()
