@@ -27,7 +27,7 @@ class countDownTimer{
     if (this.totalTimeInSec > 0) {
         this.totalTimeInSec--
     } else { 
-        clearInterval(this.timerInterval)
+        this.shutDown()
         if (this.doSomething) this.doSomething()
         return
  
@@ -43,6 +43,10 @@ class countDownTimer{
 
     reset() {
         this.totalTimeInSec =this.countDownTime *60
+    }
+
+    shutDown() {
+        clearInterval(this.timerInterval)
     }
 }
 
