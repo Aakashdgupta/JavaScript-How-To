@@ -50,12 +50,3 @@ class countDownTimer{
 // Runner Code
 
 
-doSomething = () => {
-    alert("times up !")
-    t.reset()
-    t.update()
-   
-
-}
-let t = new countDownTimer(.50,doSomething)
-t.update()
