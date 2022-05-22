@@ -1,7 +1,3 @@
-fetch("data.txt")
-  .then((res) => res.text())
-  .then((data) => wordcounter(data));
-
 
 function wordcounter(data) {
   let counts = {};
