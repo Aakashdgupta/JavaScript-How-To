@@ -78,7 +78,10 @@ class TextProcessor{
 document.addEventListener("click", (e) => {
   word = e.target
   if (TextProcessor.interactorCallback) {
-  TextProcessor.interactorCallback(word)
+    if (e.target.className === "word") {
+        TextProcessor.interactorCallback(word)
+    }
+
   }
   
 })
