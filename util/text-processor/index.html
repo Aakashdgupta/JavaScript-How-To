@@ -15,7 +15,7 @@
     fetch("data.txt")
   .then((res) => res.text())
   .then((data) =>{
-     let counter =wordcounter(data)
+     let counter =TextProcessor.wordcounter(data)
      console.log(counter)
     } )
 
