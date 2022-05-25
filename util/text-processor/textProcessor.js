@@ -12,7 +12,9 @@ function contains(arr, item) {
 
 
 class TextProcessor{
-  constructor(){}
+  constructor() {
+    this.interactorCallback = null
+  }
 
 
   static wordcounter(data) {
@@ -48,11 +50,38 @@ class TextProcessor{
   
   }
 
-  
+  static wordInteractor(text, ele, interactorCallback) {
+    this.interactorCallback = interactorCallback
+    
+
+
+    let reg = /(\w+)/
+    let data = []
+    ele.innerHTML =''
+    data = text.split(reg)
+    // console.log(data)
+    data.map((word) => {
+      let span = document.createElement("span")
+      span.innerHTML = word;
+      span.className = "word";
+
+      ele.appendChild(span)
+
+    })
+  }
   
 }
 
 
+
+//Event listeners 
+document.addEventListener("click", (e) => {
+  word = e.target
+  if (TextProcessor.interactorCallback) {
+  TextProcessor.interactorCallback(word)
+  }
+  
+})
 
 
 

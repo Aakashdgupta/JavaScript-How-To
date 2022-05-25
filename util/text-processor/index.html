@@ -9,6 +9,12 @@
 <body>
     
 
+    <textarea name="
+    " id="mytext" cols="30" rows="10"></textarea>
+
+    <p id="mypara"></p>
+
+    <button id="but">Ckick</button>
 
     <script src="./textProcessor.js"></script>
     <script>
@@ -20,6 +26,30 @@
     } )
 
 
+
+    let textBox = document.getElementById("mytext")
+    let but = document.getElementById("but")
+    let ele = document.getElementById("mypara")
+ 
+
+    let interactorCallback = (word)=>{
+        // console.log(word)
+        word.style.color ="red"
+    }
+
+    textBox.addEventListener("input",function (){
+    
+        TextProcessor.wordInteractor(textBox.value,ele,interactorCallback)
+
+    })
+
+    but.addEventListener("click",()=>{
+        TextProcessor.wordInteractor(textBox.value,ele,interactorCallback)
+    })
+
+
+
+ 
     </script>
 </body>
 </html>
