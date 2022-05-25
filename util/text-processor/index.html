@@ -23,6 +23,9 @@
   .then((data) =>{
      let counter =TextProcessor.wordcounter(data)
      console.log(counter)
+
+     
+    TextProcessor.wordInteractor(data,ele,interactorCallback)
     } )
 
 
@@ -36,6 +39,8 @@
         // console.log(word)
         word.style.color ="red"
     }
+
+
 
     textBox.addEventListener("input",function (){
     
